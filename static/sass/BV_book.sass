@@ -1,0 +1,61 @@
+@import _BV_variables
+
+.book
+	display: grid
+	grid-template-rows: max-content max-content max-content max-content
+	grid-template-areas: "book-cover" "book-title" "book-author" "book-rating"
+
+	font-size: 0.9rem
+
+.book-cover
+	grid-area: book-cover
+
+	text-align: center
+
+	img
+		height: 300px
+		max-width: 100%
+
+.book-title
+	grid-area: book-title
+	
+	text-align: left
+
+	font-weight: bold
+
+	a,
+	a:hover
+		color: $darkest
+
+.book-author
+	grid-area: book-author
+
+.book-year
+	grid-area: book-year
+
+.book-author,
+.book-year,
+.book-isbn
+	text-align: left
+
+	margin-top: -3px
+
+	a,
+	a:hover
+		color: $darkest
+
+.book-rating
+	grid-area: book-rating
+	text-align: left
+
+	margin: 7px 0px
+
+	font-size: .9em
+
+.stars
+	//letter-spacing: 0.1rem
+
+.fa-star-half
+	position: absolute
+	z-index: 1
+	line-height: inherit

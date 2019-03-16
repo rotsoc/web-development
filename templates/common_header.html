@@ -1,0 +1,43 @@
+<div class="header">
+	<!-- BRAND -->
+	<a class="navbar-brand" href="{{ url_for('home') }}">
+		<span class="bookviews-logo-header">Bookviews</span>
+	</a>
+	
+	<!-- SEARCHBAR -->
+	<div class="search-bar-container mx-auto">
+		<form action="{{ url_for('search') }}" method="post" class="form-inline">
+			<div class="input-group search-bar-header w-100">
+				<input type="input" class="form-control" name="search-bar-input" id="search-bar-input" {% if search_term %} value="{{ search_term }}" {% endif %} placeholder="Search by Title, Author or ISBN">
+				<div class="input-group-append">
+					<button class="btn btn-primary" type="submit">
+						<i class="fas fa-search"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- DROPDOWN -->
+	<ul class="username-dropdown">
+		<li class="nav-item dropdown active">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<!-- USERNAME -->
+				{{ session.username }}
+			</a>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<!-- MY REVIEWS -->
+				<a class="dropdown-item" href="{{ url_for('user_reviews') }}">
+					<i class="fas fa-book"></i> My Reviews
+				</a>
+
+				<div class="dropdown-divider"></div>
+
+				<a class="dropdown-item dropdown-item-bottom" href="{{ url_for('user_logout') }}">
+					<i class="fas fa-sign-out-alt"></i> Logout
+				</a>
+				</a>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "../sass/BV_book.css",
+	"sources": [
+		"../sass/BV_book.sass",
+		"../sass/_BV_variables.sass"
+	],
+	"sourcesContent": [
+		"@import \"_BV_variables\";\n\n.book {\n\tdisplay: grid;\n\tgrid-template-rows: max-content max-content max-content max-content;\n\tgrid-template-areas: \"book-cover\" \"book-title\" \"book-author\" \"book-rating\";\n\n\tfont-size: 0.9rem; }\n\n.book-cover {\n\tgrid-area: book-cover;\n\n\ttext-align: center;\n\n\timg {\n\t\theight: 300px;\n\t\tmax-width: 100%; } }\n\n.book-title {\n\tgrid-area: book-title;\n\n\ttext-align: left;\n\n\tfont-weight: bold;\n\n\ta,\n\ta:hover {\n\t\tcolor: $darkest; } }\n\n.book-author {\n\tgrid-area: book-author; }\n\n.book-year {\n\tgrid-area: book-year; }\n\n.book-author,\n.book-year,\n.book-isbn {\n\ttext-align: left;\n\n\tmargin-top: -3px;\n\n\ta,\n\ta:hover {\n\t\tcolor: $darkest; } }\n\n.book-rating {\n\tgrid-area: book-rating;\n\ttext-align: left;\n\n\tmargin: 7px 0px;\n\n\tfont-size: .9em; }\n\n.stars {\n }\t//letter-spacing: 0.1rem\n\n.fa-star-half {\n\tposition: absolute;\n\tz-index: 1;\n\tline-height: inherit; }\n",
+		"// Colors\n$brightest: hsl(0, 0%, 98%);\n$bright: hsl(0, 0%, 94%);\n$bright85: hsl(0, 0%, 85%);\n\n$darkest: #222222;\n\n$light-overlay01: rgba(0, 0, 0, 0.1);\n$light-overlay02: rgba(0, 0, 0, 0.2);\n$light-overlay03: rgba(0, 0, 0, 0.3);\n$light-overlay05: rgba(0, 0, 0, 0.5);\n\n$logo-color: #006ecc;\n\n$goodreads-logo-color: #553b07;\n\n// Sizes\n$header-height: 2.35em;\n"
+	],
+	"mappings": ";AAEA,AAAA,KAAK,CAAC;EACL,OAAO,EAAE,IAAK;EACd,kBAAkB,EAAE,+CAAgD;EACpE,mBAAmB,EAAE,qDAAsD;EAE3E,SAAS,EAAE,MAAO;CAAG;;;AAEtB,AAAA,WAAW,CAAC;EACX,SAAS,EAAE,UAAW;EAEtB,UAAU,EAAE,MAAO;CAIG;;;AAPvB,AAKC,WALU,CAKV,GAAG,CAAC;EACH,MAAM,EAAE,KAAM;EACd,SAAS,EAAE,IAAK;CAAG;;;AAErB,AAAA,WAAW,CAAC;EACX,SAAS,EAAE,UAAW;EAEtB,UAAU,EAAE,IAAK;EAEjB,WAAW,EAAE,IAAK;CAIG;;;AATtB,AAOC,WAPU,CAOV,CAAC;AAPF,AAQE,WARS,CAQV,CAAC,AAAA,MAAM,CAAC;EACP,KAAK,ECtBG,OAAO;CDsBG;;;AAEpB,AAAA,YAAY,CAAC;EACZ,SAAS,EAAE,WAAY;CAAG;;;AAE3B,AAAA,UAAU,CAAC;EACV,SAAS,EAAE,SAAU;CAAG;;;AAEzB,AAAA,YAAY;AACZ,AAAA,UAAU;AACV,AAAA,UAAU,CAAC;EACV,UAAU,EAAE,IAAK;EAEjB,UAAU,EAAE,IAAK;CAII;;;AATtB,AAOC,YAPW,CAOX,CAAC;AAPF,AAQE,YARU,CAQX,CAAC,AAAA,MAAM;AAPR,AAMC,UANS,CAMT,CAAC;AANF,AAOE,UAPQ,CAOT,CAAC,AAAA,MAAM;AANR,AAKC,UALS,CAKT,CAAC;AALF,AAME,UANQ,CAMT,CAAC,AAAA,MAAM,CAAC;EACP,KAAK,ECvCG,OAAO;CDuCG;;;AAEpB,AAAA,YAAY,CAAC;EACZ,SAAS,EAAE,WAAY;EACvB,UAAU,EAAE,IAAK;EAEjB,MAAM,EAAE,OAAQ;EAEhB,SAAS,EAAE,IAAK;CAAG;;;AAKpB,AAAA,aAAa,CAAC;EACb,QAAQ,EAAE,QAAS;EACnB,OAAO,EAAE,CAAE;EACX,WAAW,EAAE,OAAQ;CAAG",
+	"names": []
+}

@@ -1,0 +1,100 @@
+@import _BV_variables
+
+.details-section
+	grid-template-rows: max-content max-content max-content auto
+	grid-template-areas: "book-title" "book-author" "book-year" "description-section"
+
+.cover-section
+	grid-area: cover-section
+
+.book-cover
+	img
+		height: 150px
+
+		border: 1px solid $light-overlay01
+		border-bottom: 0px
+
+.book-title
+	margin-top: 0px
+
+	font-size: 1.7em
+	font-weight: normal
+
+.book-author
+	margin-top: 0px
+
+.book-year,
+.book-author
+	font-size: 0.9em
+
+.review
+	.rating-label
+		font-size: 1.2em
+		font-weight: bold
+
+		margin-bottom: -10px
+
+	.rating-container
+		display: grid
+		grid-template-areas: "zero-button-container rater-widget rating-value-label not-rated-warning"
+		grid-template-columns: max-content max-content max-content max-content
+
+	.star-rating
+		//background: url("https://use.fontawesome.com/releases/v5.0.13/svgs/regular/star.svg") !important
+		margin: 20px 0px
+
+	.star-rating
+		.star-value
+			//background: url("https://use.fontawesome.com/releases/v5.0.13/svgs/solid/star.svg") !important
+
+	#rating-value-label
+		margin: 10px 0px
+		padding: 0px 10px
+
+		// border: 1px solid #222
+		//border-radius: 5px
+
+		color: $light-overlay05
+
+		line-height: 48px
+
+		font-size: 1.5em
+		font-weight: bold
+
+	.zero-button-container
+		display: grid
+
+	.zero-button
+		align-self: center
+		height: 28px
+		line-height: 26px
+		margin-right: 4px
+		padding: 0px 8px
+
+		color: $light-overlay03
+		border-color: $light-overlay03
+
+		&.active,
+		&:hover
+			color: $brightest
+
+.popover
+	background-color: gold
+	font-weight: bold
+	
+	.arrow::after
+		border-top-color: gold
+
+@media (max-width: 425px)
+	.book-section
+		grid-column-gap: 10px
+
+	.details-section
+		grid-row-gap: 17px
+
+	.book-title
+		margin: -10px 0px
+
+	.book-author,
+	.book-year
+		line-height: 16px

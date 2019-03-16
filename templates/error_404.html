@@ -1,0 +1,30 @@
+{% extends "master_layout.html" %}
+
+{% block title %}
+	{% if info %}{% if info.type %} {{ info.type|capitalize() }} {% else %}Page{% endif %}{% endif %} Not Found | Bookviews
+{% endblock %}
+
+{% block local_stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_error_page.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_common_header.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="page-container">
+		<!-- HEADER -->
+		{% include "common_header.html" %}
+
+		<!-- CONTENT -->
+		<div class="content">
+			<div class="message-background">
+				<div class="message-heading">
+					THE <span>DEAD</span> END.
+				</div>
+				<div class="message-body font-effect-wallpaper">
+					404, Not Found Street<br>
+					{% if info %}{% if info.message %} {{ info.message }} {% endif %}{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

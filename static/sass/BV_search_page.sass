@@ -1,0 +1,99 @@
+@import _BV_variables
+
+.content
+	background-color: $bright
+
+	padding: 20px 60px
+
+	// Bootstrap Customizations
+	.row
+		justify-content: flex-start
+
+		margin-left: 0px
+
+	.col
+		flex-grow: 0
+
+		margin-bottom: 40px
+
+.book-title
+	margin-top: 5px
+
+	span
+		font-size: 0.9em
+		opacity: 0.7
+
+.book-cover
+	width: 200px
+
+.book-rating
+	color: $goodreads-logo-color
+
+.stars
+	float: left
+	letter-spacing: -0.07rem
+
+.ratings-count
+	float: right
+
+.author
+	display: block
+	width: 200px
+	height: 200px
+	padding: 70px 0px
+	border: 1px solid $light-overlay02
+	border-radius: 50%
+
+	text-align: center
+	overflow: hidden
+	
+	cursor: pointer
+
+	background-color: $brightest
+	color: $darkest
+
+	&:hover
+		background-color: $brightest
+		color: $logo-color
+		border-color: $logo-color
+
+		text-decoration: none
+
+.no-results-label
+	&:after
+		content: "No books or authors found."
+		font-size: 1.5em
+		font-weight: 500
+
+///////////////////////////////////////////////////////////////////////////////
+// Media Queries
+
+// Up to 768px
+@media (max-width: 768px)
+	.col
+		flex-grow: 0
+
+		margin: auto
+		margin-top: 0px
+
+// Up to 534px
+@media (max-width: 534px)
+	.author
+		width: 120px
+		height: 120px
+		padding: 40px 0px
+		font-size: 14px
+
+	.no-results-label
+		&:after
+			content: "No results."
+
+// Up to 425px
+@media (max-width: 425px)
+	.content
+		padding: 20px 20px
+
+// Up to 320px
+@media (max-width: 320px)
+	body
+		font-size: 90%

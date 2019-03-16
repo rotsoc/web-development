@@ -1,0 +1,119 @@
+@import _BV_variables
+
+body
+	background: url("../images/background_home.jpg") no-repeat center top fixed
+	background-size: cover
+
+.page-content
+	grid-template-rows: $header-height auto $header-height * 2
+	grid-template-areas: "header" "content" "footer"
+
+.content
+	align-self: center
+
+	text-align: center
+
+.login-register-container
+	display: grid
+	grid-template-columns: auto max-content auto
+	grid-template-areas: "register-form forms-separator login-form"
+
+	max-width: 800px
+	margin: 0px auto
+
+	border: 1px solid $light-overlay03
+	border-radius: 15px
+
+	background-color: $brightest
+
+	box-shadow: 0 0px 8px 2px $light-overlay03
+
+.forms-separator
+	grid-area: forms-separator
+	width: 2px
+	background-color: $light-overlay01
+
+.login-form,
+.register-form
+	padding: 40px
+	
+	border-radius: inherit
+
+.login-form
+	grid-area: login-form
+
+	border-top-left-radius: 0px
+	border-bottom-left-radius: 0px
+
+	background-color: rgba(0, 123, 255, 0.05)
+
+.register-form
+	grid-area: register-form
+
+	border-top-right-radius: 0px
+	border-bottom-right-radius: 0px
+
+	background-color: lightyellow
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Media Queries
+
+// Up to 768px
+@media (max-width: 768px)
+	.page-container
+			grid-template-rows: auto
+			grid-template-areas: "content"
+	
+	.login-register-container
+		grid-template-columns: 100%
+		grid-template-rows: auto auto
+		grid-template-areas: "login-form" "register-form"
+
+		width: 100%
+
+		border-top-left-radius: 15px
+		border-top-right-radius: 15px
+
+		border-bottom-left-radius: 0px
+		border-bottom-right-radius: 0px
+
+	.login-form,
+	.register-form
+		margin: auto
+
+		width: 100%
+
+	.login-form
+		border-radius: inherit
+
+		border-bottom: 2px solid $light-overlay01
+
+// Up to 375px
+@media (max-width: 375px)
+	body
+		background: none
+		background-color: $brightest
+	.login-form,
+	.register-form
+		padding: 20px
+
+	.bookviews-logo-big
+		font-size: 3rem
+
+	.content
+		.bookviews-subtitle
+			margin-top: -26px
+
+			font-size: 0.9rem
+
+// Up to 320px
+@media (max-width: 320px)
+	body
+		font-size: 90%
+
+	.bookviews-logo-big
+		font-size: 2.7rem
+
+	.content
+		.bookviews-subtitle
+			margin-top: -24px

@@ -1,0 +1,98 @@
+
+96 lines (81 sloc) 3.12 KB
+{% extends "master_layout.html" %}
+
+{% block title %}
+	{{ search_term }} | Bookviews
+{% endblock %}
+
+{% block local_stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_common_page.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_common_header.css') }}">
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_book.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_search_page.css') }}">
+{% endblock %}
+
+{% block local_scripts %}
+	<script>
+    	$(function () {
+    		$('[data-toggle="tooltip"]').tooltip();
+    	})
+	</script>
+{% endblock %}
+
+{% block body %}
+	<div class="page-container">
+		<!-- HEADER -->
+		{% include "common_header.html" %}
+	
+		<!-- CONTENT -->
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+				{% if search_results %}
+					{% for book in search_results %}
+						{% if book.isbn %}
+							<div class="col">
+								<div class="book">
+									<div class="book-cover box-shadow-bottom">
+										<a href="{{ url_for('book', isbn=book.isbn) }}{% if user_reviews %}#{{ user_reviews[loop.index0] }}{% endif %}"><img src="{{ book.cover }}"></a>
+									</div>
+
+									<div class="book-title">
+										<a href="{{ url_for('book', isbn=book.isbn) }}{% if user_reviews %}#{{ user_reviews[loop.index0] }}{% endif %}">{{ book.title }} <span>({{ book.year }})</span></a>
+									</div>
+
+									<div class="book-author">
+										by <a href="{{ url_for('author', name=book.author) }}">{{ book.author }}</a>
+									</div>
+
+									<div class="book-rating">
+										<div class="stars" data-toggle="tooltip" data-placement="bottom" title="Goodreads Rating: {{ book.goodreads_average_rating }}">
+										{% set rating_fraction = (book.goodreads_average_rating % 1)|round(1) %}
+										{% set rating_int = (book.goodreads_average_rating - (book.goodreads_average_rating % 1|round(1)|round(1)))|int %}
+
+										{% for star in range(rating_int) %}
+											<span class="fa fa-star star-checked"></span>
+										{% endfor %}
+										
+										{% if rating_fraction >= 0.5 %}
+											<span class="fa fa-star-half star-checked"></span>
+										{% endif %}
+										
+										{% for star in range(5 - rating_int) %}
+											<span class="far fa-star"></span>
+										{% endfor %}
+										</div>
+
+										<div class="ratings-count">
+											<i class="fas fa-users"></i> {{ book.goodreads_ratings_count }}
+										</div>
+									</div>
+								</div>
+							</div>
+
+						{% else %}
+							<div class="col">
+								<a href="{{ url_for('author', name=book.author) }}" class="author book-title">
+									{{ book.author }} <br>
+									{% if book.number_of_books == 1 %}
+										<span>({{ book.number_of_books }} Book)</span>
+									{% else %}
+										<span>({{ book.number_of_books }} Books)</span>
+									{% endif %}
+								</a>
+							</div>
+						{% endif %}
+					{% endfor %}
+
+				{% else %}
+					<div class="mx-auto no-results-label" style="margin-top: 20%">
+					</div>
+				{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

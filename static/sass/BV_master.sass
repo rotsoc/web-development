@@ -1,0 +1,207 @@
+@import _BV_variables
+
+body
+	margin: 0px
+	
+	font-family: "Open Sans", Helvetica, Arial, Sans-Serif
+	font-size: 100%
+
+	overflow-x: hidden
+
+// Main Grid
+.page-container
+	display: grid
+	grid-template-rows: $header-height auto $header-height * 2
+	grid-template-areas: "header" "content" "footer"
+	height: 100vh
+	width: 100%
+
+.header
+	grid-area: header
+
+	text-align: center
+
+	line-height: $header-height
+
+	color: $bright
+
+	// Bootstrap Customizations
+	.navbar
+		height: $header-height
+
+	.nav-link
+		padding: 0px
+
+	.dropdown-menu
+		box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.3)
+
+	.dropdown-menu-right
+		right: -20px
+		width: 205px
+		margin-top: 0px
+
+	.navbar-brand
+		padding: 0px
+
+	.dropdown-toggle
+		padding-right: 0px !important
+
+// Bootstrap Customization
+.dropdown-menu
+	padding: 0px
+
+	background-color: $brightest
+
+	color: $darkest
+
+	border-radius: 0px 0px 0.25rem 0.25rem
+
+	.dropdown-item
+		padding: 0px 1rem
+
+		&:hover,
+		&:focus,
+		&:visited
+			background-color: $bright
+
+			color: $darkest
+
+			border-radius: 0px
+
+		&:active
+			background-color: #007bff
+
+			color: $brightest
+
+	.dropdown-divider
+		margin: 0px
+
+	.dropdown-item-bottom,
+	.dropdown-item-top
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited
+			border-radius: inherit
+
+//
+.content
+	grid-area: content
+
+.footer
+	grid-area: footer
+
+// Logo
+%bookviews-logo
+	color: $logo-color
+
+	font-weight: bold
+
+.bookviews-logo-big
+	@extend %bookviews-logo
+	
+	font-size: 64px
+	text-shadow: 0 0 25px #fff1be
+
+.bookviews-logo-header
+	@extend %bookviews-logo
+
+	// font-size: 
+
+.bookviews-subtitle
+	margin-left: 130px
+	margin-top: -29px
+
+	font-size: 0.9rem
+	font-weight: bold
+	
+	opacity: 0.7
+
+// Search Bar
+%search-bar
+	input
+		background-color: hsl(0, 0%, 88%)
+		
+		border: none
+		border-radius: 10px
+		
+		padding: 0.5rem 1rem
+		padding-right: 0rem
+
+		color: $darkest
+
+		font-size: 1.2em
+		text-align: center
+		vertical-align: middle
+
+		&::placeholder
+			color: $darkest
+			opacity: 0.5
+
+			font-size: 1em
+
+			vertical-align: middle
+
+		&:focus
+			background-color: $brightest
+			opacity: 1
+
+	// Bootstrap Customization
+	button
+		padding: .375em 1.75em
+		border-radius: 10px
+
+		background-color: hsl(0, 0%, 88%)
+
+		border-color: transparent
+
+		color: $darkest
+
+		font-size: 1em
+
+.search-bar-home
+	@extend %search-bar
+	max-width: 768px
+
+.search-bar-header
+	@extend %search-bar
+
+	height: $header-height
+
+	input
+		font-size: 1.2em
+		border-radius: 7px
+
+		text-align: center
+
+		padding-left: 1rem
+
+		height: inherit
+
+		&:focus
+			box-shadow: 0px 0px 20px 6px $light-overlay03
+
+			border: 2px solid hsla(208, 100%, 40%, 0.3)
+
+	// Bootstrap Customization
+	.btn
+		border-radius: 5px
+
+//
+.height-screen
+	height: 100vh
+
+.badge
+	margin-left: 10px
+	margin-top: 2px
+
+	background: $logo-color
+	
+	color: $brightest
+
+.text-shadow
+	text-shadow: 0 0 10px $darkest
+
+.box-shadow-bottom
+	img
+		box-shadow: 0 8px 6px -6px $darkest

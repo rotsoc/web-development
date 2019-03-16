@@ -1,0 +1,37 @@
+{% extends "master_layout.html" %}
+
+{% block title %}
+	Home | Bookviews
+{% endblock %}
+
+{% block local_stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_home_page.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="page-container">
+		<!-- HEADER -->
+		{% include "home_header.html" %}
+
+		<!-- CONTENT -->
+		<div class="content">
+			<div class="bookviews-logo-big">
+				Bookviews
+			</div>
+			<div class="bookviews-subtitle">
+				Book Reviews
+			</div>
+			
+			<form class="search-bar-home mx-auto" action="{{ url_for('search') }}" method="post">
+				<div class="input-group">
+					<input type="input" class="form-control" name="search-bar-input" id="search-bar-input" placeholder="Search by Title, Author or ISBN" autofocus>
+					<div class="input-group-append">
+						<button class="btn btn-primary" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}

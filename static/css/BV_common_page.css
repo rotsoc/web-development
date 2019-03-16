@@ -1,0 +1,1 @@
+.page-container{grid-template-rows:2.35em auto;grid-template-areas:"header" "content"}.content{background-color:#d9d9d9;align-self:stretch;padding:5px 60px}.content .heading{text-align:left;font-weight:bold}

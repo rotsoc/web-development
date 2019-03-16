@@ -1,0 +1,86 @@
+{% extends "master_layout.html" %}
+
+{% block title %}
+	Reviewing "{{ book.title }}" | Bookviews
+{% endblock %}
+
+{% block local_stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_common_page.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_common_header.css') }}">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_book.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_book_page.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/BV_review_submit_page.css') }}">
+{% endblock %}
+
+{% block local_scripts %}
+	<script src="{{ url_for('static', filename='javascript/rater-js/index.js') }}"></script>
+	<script src="{{ url_for('static', filename='javascript/BV_rater_widget.js') }}" type="text/javascript" charset="utf-8" async defer></script>
+{% endblock %}
+
+{% block body %}
+	<div class="page-container">
+		<!-- HEADER -->
+		{% include "common_header.html" %}
+
+		<!-- CONTENT -->
+		<div class="content">
+			<div class="container-fluid">
+				<div class="book-info">
+					<div class="book-section">
+						<div class="cover-section">
+							<div class="book-cover box-shadow-bottom">
+								<a href="{{ url_for('book', isbn=book.isbn) }}"><img src="{{ book.cover }}"></a>
+							</div>
+						</div>
+
+						<div class="details-section">
+							<div class="book-title">
+								<a href="{{ url_for('book', isbn=book.isbn) }}">{{ book.title }}</a>
+							</div>
+
+							<div class="book-author">
+								<b>Author:</b> <a href="{{ url_for('author', name=book.author) }}">{{ book.author }}</a>
+							</div>
+
+							<div class="book-year">
+								<b>Published:</b> <a href="{{ url_for('year', year=book.year) }}">{{ book.year }}</a>
+							</div>
+
+							<div class="book-isbn">
+								<b>ISBN:</b> {{ book.isbn }}
+							</div>
+						</div>
+					</div>
+
+					<div class="reviews">
+						<div class="review" id="">
+							<form action="{{ url_for('new_review_submit', isbn=book.isbn) }}" method="post">
+								<div class="rating-label">How do you rate this book?</div>
+								<div class="rating-container">
+									<div class="zero-button-container">
+										<button onclick="toggle_zero_stars()" type="button" class="zero-button btn btn-outline-secondary btn-sm" data-toggle="button" aria-pressed="false">
+											zero
+										</button>
+									</div>
+									<div id="rater-widget" data-toggle="popover"></div>
+									<div id="rating-value-label"></div>
+								</div>
+
+								<input type="text" name="rating-value" id="rating-value" style="display: none" required>
+
+								<div class="form-group">
+									<textarea name="text-area" class="form-control" id="text-area" rows="3" placeholder="What are your thoughts on this book?" autofocus required></textarea>
+								</div>
+
+								<button type="submit" class="btn btn-primary w-100" onclick="checkRater()">
+									<i class="fas fa-check"></i> Submit
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

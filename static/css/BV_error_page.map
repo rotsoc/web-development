@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "../sass/BV_error_page.css",
+	"sources": [
+		"../sass/BV_error_page.sass",
+		"../sass/_BV_variables.sass",
+		"../sass/_HamletOrNot.sass"
+	],
+	"sourcesContent": [
+		"@import \"_BV_variables\";\n@import url(\"https://fonts.googleapis.com/css?family=Droid+Sans+Mono&effect=wallpaper\");\n@import \"_HamletOrNot\";\n\nbody {\n\tbackground: url(\"../images/background_error.jpg\") no-repeat center top fixed;\n\tbackground-size: cover;\n\n\tcolor: $darkest; }\n\n.content {\n\tdisplay: grid;\n\n\talign-self: center;\n\n\ttext-align: center; }\n\n.message-background {\n\tmargin: auto;\n\tpadding: 60px;\n\n\tborder: 1px solid rgba(0, 0, 0, 0.3);\n\tborder-radius: 15px;\n\n\tbackground-color: $brightest;\n\n\tbox-shadow: 0 0px 8px 2px rgba(0, 0, 0, 0.3);\n\n\t.message-heading {\n\t\tfont-family: HamletOrNot;\n\t\tfont-size: 2em;\n\n\t\tcolor: $darkest;\n\n\t\tspan {\n\t\t\tcolor: inherit;\n\t\t\topacity: 0.3; } }\n\n\t.message-body {\n\t\tcolor: inherit;\n\t\topacity: 0.5;\n\n\t\tfont-size: 1.2em; } }\n\n///////////////////////////////////////////////////////////////////////////////\n// Media Queries\n\n// Up to 768px\n@media (max-width: 768px) {\n\t.content {\n\t\tfont-size: 80%; } }\n\n// Up to 534px\n@media (max-width: 534px) {\n\t.content {\n\t\tfont-size: 75%; }\n\n\t.message-background {\n\t\tpadding: 40px; } }\n\n// Up to 320px\n@media (max-width: 320px) {\n\tbody {\n\t\tfont-size: 90%; } }\n",
+		"// Colors\n$brightest: hsl(0, 0%, 98%);\n$bright: hsl(0, 0%, 94%);\n$bright85: hsl(0, 0%, 85%);\n\n$darkest: #222222;\n\n$light-overlay01: rgba(0, 0, 0, 0.1);\n$light-overlay02: rgba(0, 0, 0, 0.2);\n$light-overlay03: rgba(0, 0, 0, 0.3);\n$light-overlay05: rgba(0, 0, 0, 0.5);\n\n$logo-color: #006ecc;\n\n$goodreads-logo-color: #553b07;\n\n// Sizes\n$header-height: 2.35em;\n",
+		"@font-face {\n\tfont-family: \"HamletOrNot\";\n\tsrc: url(../fonts/HamletOrNot.ttf) format(\"truetype\"); }\n"
+	],
+	"mappings": "AACA,OAAO,CAAC,+EAAI;AEDZ,UAAU;EACT,WAAW,EAAE,aAAc;EAC3B,GAAG,EAA8B,6BAAC,CAAC,kBAAM;;;;AFE1C,AAAA,IAAI,CAAC;EACJ,UAAU,EAAE,qCAAG,CAAmC,SAAS,CAAC,MAAM,CAAC,GAAG,CAAC,KAAK;EAC5E,eAAe,EAAE,KAAM;EAEvB,KAAK,ECHI,OAAO;CDGE;;;AAEnB,AAAA,QAAQ,CAAC;EACR,OAAO,EAAE,IAAK;EAEd,UAAU,EAAE,MAAO;EAEnB,UAAU,EAAE,MAAO;CAAG;;;AAEvB,AAAA,mBAAmB,CAAC;EACnB,MAAM,EAAE,IAAK;EACb,OAAO,EAAE,IAAK;EAEd,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,kBAAI;EACtB,aAAa,EAAE,IAAK;EAEpB,gBAAgB,ECvBL,OAAG;EDyBd,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,kBAAI;CAgBP;;;AAzBxB,AAWC,mBAXkB,CAWlB,gBAAgB,CAAC;EAChB,WAAW,EAAE,WAAY;EACzB,SAAS,EAAE,GAAI;EAEf,KAAK,EC3BG,OAAO;CD+BI;;;AAnBrB,AAiBE,mBAjBiB,CAWlB,gBAAgB,CAMf,IAAI,CAAC;EACJ,KAAK,EAAE,OAAQ;EACf,OAAO,EAAE,GAAI;CAAG;;;AAnBnB,AAqBC,mBArBkB,CAqBlB,aAAa,CAAC;EACb,KAAK,EAAE,OAAQ;EACf,OAAO,EAAE,GAAI;EAEb,SAAS,EAAE,KAAM;CAAG;;AAMtB,MAAM,EAAL,SAAS,EAAE,KAAK;;EAChB,AAAA,QAAQ,CAAC;IACR,SAAS,EAAE,GAAI;GAAG;;;AAGpB,MAAM,EAAL,SAAS,EAAE,KAAK;;EAChB,AAAA,QAAQ,CAAC;IACR,SAAS,EAAE,GAAI;GAAG;;EAEnB,AAAA,mBAAmB,CAAC;IACnB,OAAO,EAAE,IAAK;GAAG;;;AAGnB,MAAM,EAAL,SAAS,EAAE,KAAK;;EAChB,AAAA,IAAI,CAAC;IACJ,SAAS,EAAE,GAAI;GAAG",
+	"names": []
+}
