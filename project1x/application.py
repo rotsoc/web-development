@@ -208,5 +208,21 @@ def content_not_found(e):
 #------------------------------------------------------------#
 # API
 
+@app.route("/api/<string:isbn>")
+def API_isbn(isbn):
+	book_data = db.execute("SELECT title, author_id, year FROM books WHERE isbn = :isbn LIMIT 1", {"isbn": isbn}).fetchone()
 
+	if book_data is None:
+		return jsonify({"error": "isbn not found"}), 422
+
+	author = db.execute("SELECT name FROM authors WHERE id = :author_id LIMIT 1", {"author_id": book_data.author_id}).fetchone()[0]
+
+	return jsonify({
+			"title": book_data["title"],
+			"author": author,
+			"year": book_data["year"],
+			"isbn": isbn,
+			"review_count": get_ratings_count(isbn),
+			"average_score": get_average_rating(isbn)
+})
 	
