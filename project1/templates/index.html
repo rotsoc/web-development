@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+  Index
+{% endblock %}
+
+{% block body %}
+
+<form action="{{ url_for('register') }}" method="post">
+  <input type="button">
+  <button>Click here for the registration Page</button>
+  </form>
+
+{% endblock %}
